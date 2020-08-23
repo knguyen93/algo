@@ -8,4 +8,9 @@ public class ListNode {
         val = x;
         next = null;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(val);
+    }
 }
