@@ -4,3 +4,6 @@ The problems were categoried and carried out from the internet, most of them sol
 
 What included?
 * Linked List
+* Tree
+* Binary Search
+* Binary Search Tree
