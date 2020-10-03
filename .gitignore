@@ -9,6 +9,8 @@
 !.vscode/extensions.json
 *.code-workspace
 
+local
+
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history

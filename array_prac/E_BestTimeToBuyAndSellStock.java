@@ -41,4 +41,7 @@ public class E_BestTimeToBuyAndSellStock {
 
         return maxProf > 0 ? maxProf : 0;
     }
+
+    public static void main(String[] args) {
+    }
 }
