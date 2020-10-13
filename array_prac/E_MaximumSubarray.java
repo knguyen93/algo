@@ -1,7 +1,5 @@
 package array_prac;
 
-import java.util.LinkedList;
-
 /**
  * Given an integer array nums, find the contiguous subarray (containing at
  * least one number) which has the largest sum and return its sum.
@@ -19,17 +17,11 @@ public class E_MaximumSubarray {
             // update the max val
             max = Math.max(cursorMax, max);
         }
-
-        
-
         return max;
     }
 
     public static void main(String[] args) {
-        LinkedList<Integer> list = new LinkedList<>();
-        list.add(1);
-        list.add(2);
-        list.add(3);
-        System.out.println(list);
+        int nums[] = {1,2,4,6,-11,10};
+        System.out.println(maxSubArray(nums));
     }
 }
