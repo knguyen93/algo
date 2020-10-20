@@ -5,6 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Given an array of strings strs, group the anagrams together. You can return the answer in any order.
@@ -50,8 +52,28 @@ public class M_GroupAnagrams {
             lst.add(strs[i]);
             groups.put(key, lst);
         }
-
         return new ArrayList<>(groups.values());
+    }
+
+    public static String[][] groupAnagramsArr(String[] strs) {
+        Map<String, List<String>> groups = new HashMap<>();
+        for (int i =0; i < strs.length; i++) {
+            char letters[] = strs[i].toCharArray();
+            Arrays.sort(letters);
+            String key = new String(letters);
+            List<String> lst = groups.getOrDefault(key, new ArrayList<>());
+            lst.add(strs[i]);
+            groups.put(key, lst);
+        }
+
+        String[][] res = new String[groups.size()][0];
+        int idx = 0;
+        
+        for (List<String> lst : groups.values()) {
+            res[idx++] = lst.toArray(new String[0]);
+        }
+
+        return res;
     }
 
     public static void main(String[] args) {
@@ -70,5 +92,8 @@ public class M_GroupAnagrams {
 
         System.out.println(groupAnagrams(arr)); //[["bat"],["nat","tan"],["ate","eat","tea"]]
         System.out.println(groupAnagrams(arr2)); //[["bat"]]
+
+        System.out.println(Arrays.deepToString(groupAnagramsArr(arr)));
+        System.out.println(Arrays.deepToString(groupAnagramsArr(arr2)));
     }
 }

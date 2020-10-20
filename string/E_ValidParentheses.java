@@ -30,7 +30,7 @@ public class E_ValidParentheses {
      * Runtime: 1 ms, faster than 98.95% of Java online submissions for Valid Parentheses. 
      * Memory Usage: 37.3 MB, less than 86.05% of Java online submissions for Valid Parentheses.
      */
-    public boolean isValid1(String s) {
+    public static boolean isValid(String s) {
         Stack<Character> stack = new Stack<Character>();
 
         for (int i = 0; i < s.length(); i++) {
@@ -59,5 +59,10 @@ public class E_ValidParentheses {
             }
         }
         return stack.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        System.out.println("(): " + isValid("()"));   
+        System.out.println(": " + isValid(""));
     }
 }
